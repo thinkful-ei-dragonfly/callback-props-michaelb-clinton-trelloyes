@@ -11,13 +11,19 @@ class App extends Component {
   };
 
   removeCard = (index) => {
-    console.log(index)
-    // console.log(this.state.allCards)
-    // const {index, ...rest} = this.state.allCards;
-    // console.log(rest)
-    // this.setState( { 
-    //   allCards: rest
-    // } );
+    let allCards = this.props.store.allCards;
+
+    let rest = {};
+
+    for (let x in allCards) {
+      if ( allCards[x].title !== index.title ) {
+        console.log(allCards[x])
+      }
+    }
+
+    this.setState( { 
+      allCards: rest
+    } );
   };
 
   render() {
